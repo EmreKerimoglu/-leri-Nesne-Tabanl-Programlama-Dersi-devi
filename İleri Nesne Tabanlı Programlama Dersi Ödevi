@@ -1,0 +1,78 @@
+// Ödev 1
+	static void Main(string[] args)
+	{
+		Dikdortgen dikdortgen1 = new Dikdortgen(4, 3);
+		Dikdortgen dikdortgen2 = new Dikdortgen(4, 3);
+
+		Console.WriteLine($"Diktortgen 1 icin Cevre:{dikdortgen1.CevreHesapla()} ve Alan:{dikdortgen1.AlanHesapla()}");
+
+		Console.WriteLine($"Diktortgen 2 icin Cevre:{dikdortgen2.CevreHesapla()} ve Alan:{dikdortgen2.AlanHesapla()}");
+
+		Ogrenci ogrenci = new Ogrenci("Adem", "Soyuz", 22, "c20201129");
+		Calisan calisan = new Calisan("Adil", "Soylu", 33, "Muhendis", 7000);
+	}
+		    
+	public class Dikdortgen
+    {
+        private int b;
+        private int h;
+
+        public Dikdortgen(int boy, int yukseklik)
+        {
+            b = boy;
+            h = yukseklik;
+        }
+
+        public int AlanHesapla()
+        {
+            return b * h;
+        }
+        public int CevreHesapla()
+        {
+            return 2 * (b + h);
+        }
+    }
+		
+// Ödev 2		
+		static void Main(string[] args)
+        {
+            Ogrenci ogrenci = new Ogrenci("Adem", "Soyuz", 22, "c20201129");
+            Calisan calisan = new Calisan("Adil", "Soylu", 33, "Muhendis", 7000);
+        }
+		
+		public class Musteri
+		{
+			protected string ad;
+			protected string soyad;
+			protected int yas;
+
+			public Musteri(string adi, string soyadi, int yasi)
+			{
+				ad = adi;
+				soyad = soyadi;
+				yas = yasi;
+			}
+		}
+		
+		public class Ogrenci: Musteri
+		{
+			string ogrenciNo;
+			public Ogrenci(string adi, string soyadi, int yasi, string no) : base(adi,soyadi,yasi)
+			{
+				ogrenciNo = no;
+			}
+
+		}
+		
+		
+		public class Calisan : Musteri
+		{
+			string meslek;
+			int maas;
+			public Calisan(string adi, string soyadi, int yasi, string meslegi, int maasi) : base(adi,soyadi,yasi)
+			{
+				meslek = meslegi;
+				maas = maasi;
+			}
+
+		}
